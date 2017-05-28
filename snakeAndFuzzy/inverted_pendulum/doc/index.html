@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content=
+"HTML Tidy for Windows (vers 14 February 2006), see www.w3.org" />
+<title>Inverted pendulum controlled by a fuzzy system</title>
+</head>
+<body>
+<h1>Inverted pendulum controlled by a fuzzy system</h1>
+This is an example of a fuzzy system to control an inverted
+pendulum.
+<h2>What is an inverted pendulum</h2>
+For the general description of an inverted pendulum, see <a href="http://en.wikipedia.org/wiki/Inverted_pendulum">Wikipedia.</a>
+<p>Also there are several examples of real world inverted pendulums
+to find at <a href="http://www.youtube.com/results?search_query=inverted+pendulum">YouTube</a> or <a href="http://video.google.com/videosearch?q=inverted+pendulum">Google Video</a>.</p>
+<h2>General structure</h2>
+The whole system consists of a simulated inverted pendulum which
+current state is feed into a controller. Its result is then used
+to control the acceleration of the base of the inverted pendulum.
+<p>To show off some features of pyfuzzy the controller is realized using a fuzzy system.
+(However, one can also realize other types of controllers, as an example there is included a neural network as controller.) 
+<h2>Description of parts</h2>
+<ul>
+<li><a href="simulation/">simulation</a>: the simulation of the
+inverted pendulum.</li>
+<li><a href="fuzzy/">fuzzy</a>: a fuzzy system (designed by
+Ren&eacute; Liebscher for several lectures in study)</li>
+<li><a href="fuzzy2/">fuzzy2</a>: a fuzzy system after the book
+...</li>
+<li><a href="neuro/">neuro</a>: an example of a neural network
+trained from the first fuzzy system above.</li>
+</ul>
+<h2>History</h2>
+This system was written orginally in Delphi for purpose to gain some
+experience in some topics taught in Ren&eacute; Liebscher's study
+of computer science. This work is still available at <a href=
+"http://www.htw-dresden.de/~iwe/Belege/Liebscher/neuro1/index.html">
+http://www.htw-dresden.de/~iwe/Belege/Liebscher/neuro1/index.html</a>.
+(In German)
+<p>Later when creating pyfuzzy it was converted to python, to serve
+here as an example.</p>
+</body>
+</html>

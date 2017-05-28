@@ -1,0 +1,9 @@
+http://www.pyimagesearch.com/2015/10/26/how-to-install-opencv-3-on-raspbian-jessie/
+
+https://github.com/shantnu/Webcam-Face-Detect
+
+https://realpython.com/blog/python/face-detection-in-python-using-a-webcam/
+
+https://realpython.com/blog/python/face-recognition-with-python/
+
+http://www.pyimagesearch.com/2016/02/22/writing-to-video-with-opencv/

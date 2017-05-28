@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content=
+"HTML Tidy for Windows (vers 14 February 2006), see www.w3.org" />
+<title>A fuzzy system to control an inverted pendulum</title>
+</head>
+<body>
+<h1>A fuzzy system to control an inverted pendulum</h1>
+<h2>Input variables</h2>
+<h3>input variable Phi</h3>
+<p>This is the angle of the inverted pendulum. It defined as 0 the
+pendulum is horizontal to the right, and increasing counter
+clockwise.</p>
+<p><img src="Phi.png" /></p>
+<h3>input variable dPhi-dT</h3>
+<p>The angle velocity.</p>
+<p><img src="dPhi_dT.png" /></p>
+<h3>input variable X</h3>
+<p>The absolute position. At the end the pendulum should be
+positioned at 0.</p>
+<p><img src="X.png" /></p>
+<h3>input variable dX-dT</h3>
+<p>Velocity of the pendulum.</p>
+<p><img src="dX_dT.png" /></p>
+<h2>Output variables</h2>
+<h3>output variable a</h3>
+<p>The acceleration of base point of the pendulum. This is the
+output of the fuzzy controller.</p>
+<p><img src="a.png" /></p>
+<h2>Fuzzy rules</h2>
+<p>They might be more complex than necessary, but there intend is
+also some features of pyfuzzy.</p>
+<p>If you like you can change them by yourself.</p>
+<h3>Stabilizing the pendulum upright</h3>
+If the pendulum is almost upright we should stabilize it there and
+try to lead it to position 0.
+<h4>stop</h4>
+<p>If the pendulum is upright and we don't move, or it is not
+upright but turns in the right direction to become upright, we
+should stop moving.</p>
+<p><img src="Rule%20stop.png" /></p>
+<h4>tilts left</h4>
+<p>If the pendulum is tilted left we should also move left, but for
+reaching position 0 we supress this when the position is somewhere
+at the right of position 0. So we hold an slight left tilting which
+is followed until we reaching position near 0.</p>
+<p><img src="Rule%20tilts%20left.png" /></p>
+<h4>tilts right</h4>
+<p>If the pendulum is tilted right we should also move right, but
+for reaching position 0 we supress this when the position is
+somewhere at the left of position 0. So we hold an slight right
+tilting which is followed until we reaching position near 0.</p>
+<p><img src="Rule%20tilts%20right.png" /></p>
+<h4>far left</h4>
+<p>If the pendulum is tilted more left we should move left in any
+case, without any considerations about position.</p>
+<p><img src="Rule%20far%20left.png" /></p>
+<h4>far right</h4>
+<p>If the pendulum is tilted more right we should move right in any
+case, without any considerations about position.</p>
+<p><img src="Rule%20far%20right.png" /></p>
+<h3>Handling a downwards hanging pendulum</h3>
+<h4>accelerate counter clockwise if down</h4>
+<p>If the pendulum is hanging down, ....</p>
+<p><img src="Rule%20accelerate%20ccw%20if%20down.png" /></p>
+<h4>accelerate clockwise if down</h4>
+<p>If the pendulum is hanging down, ....</p>
+<p><img src="Rule%20accelerate%20cw%20if%20down.png" /></p>
+<h2>Result</h2>
+<h3>a as function of Phi and dPhi_dT</h3>
+<p>Without considering position control, you get the following
+function:</p>
+<p><img src="Phi_dPhi_dT_a.png" /></p>
+</body>
+</html>

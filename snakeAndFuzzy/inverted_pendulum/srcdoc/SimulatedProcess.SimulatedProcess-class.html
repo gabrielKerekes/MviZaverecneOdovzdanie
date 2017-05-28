@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>SimulatedProcess.SimulatedProcess</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="SimulatedProcess-module.html">Module&nbsp;SimulatedProcess</a> ::
+        Class&nbsp;SimulatedProcess
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="SimulatedProcess.SimulatedProcess-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class SimulatedProcess</h1><p class="nomargin-top"><span class="codelink"><a href="SimulatedProcess-pysrc.html#SimulatedProcess">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_simulate" name="uml_class_diagram_for_simulate">
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html" title="Simulation of real process." alt="" coords="16,11,200,331"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#X" title="position [m]" alt="" coords="17,28,199,47"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#dX_dT" title="velocity [m/s]" alt="" coords="17,47,199,65"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#Phi" title="angle [rad]" alt="" coords="17,65,199,84"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#dPhi_dT" title="angle velocity [rad/s]" alt="" coords="17,84,199,103"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#a" title="acceleration [m/s&#178;]" alt="" coords="17,103,199,121"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#l" title="length of pendulum [m]" alt="" coords="17,121,199,140"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#m" title="mass of pendulum [kg]" alt="" coords="17,140,199,159"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#M_P" title="friction of bearing of pendulum expressed as torque [kgm&#178;/s&#178;=Nm]" alt="" coords="17,159,199,177"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#a_W" title="friction of car expressed as acceleration [m/s&#178;]" alt="" coords="17,177,199,196"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#W" title="gain for incoming acceleration value" alt="" coords="17,196,199,215"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#Z" title="disturbance" alt="" coords="17,215,199,233"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#__init__" title="Initialize the simulation." alt="" coords="17,236,199,255"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#setStateValues" title="SimulatedProcess.SimulatedProcess.setStateValues" alt="" coords="17,255,199,273"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#getStateValues" title="SimulatedProcess.SimulatedProcess.getStateValues" alt="" coords="17,273,199,292"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#setControlValues" title="SimulatedProcess.SimulatedProcess.setControlValues" alt="" coords="17,292,199,311"/>
+<area shape="rect" href="SimulatedProcess.SimulatedProcess&#45;class.html#getDefaultControlValues" title="SimulatedProcess.SimulatedProcess.getDefaultControlValues" alt="" coords="17,311,199,329"/>
+</map>
+  <img src="uml_class_diagram_for_simulate.gif" alt='' usemap="#uml_class_diagram_for_simulate" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Simulation of real process.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__init__"></a><span class="summary-sig-name">__init__</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Initialize the simulation.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="SimulatedProcess-pysrc.html#SimulatedProcess.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setStateValues"></a><span class="summary-sig-name">setStateValues</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">dict</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="SimulatedProcess-pysrc.html#SimulatedProcess.setStateValues">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getStateValues"></a><span class="summary-sig-name">getStateValues</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">dict</span>=<span class="summary-sig-default">{}</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="SimulatedProcess-pysrc.html#SimulatedProcess.getStateValues">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setControlValues"></a><span class="summary-sig-name">setControlValues</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">dict</span>=<span class="summary-sig-default">{}</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="SimulatedProcess-pysrc.html#SimulatedProcess.setControlValues">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getDefaultControlValues"></a><span class="summary-sig-name">getDefaultControlValues</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="SimulatedProcess-pysrc.html#SimulatedProcess.getDefaultControlValues">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="X"></a><span class="summary-name">X</span><br />
+      position [m]
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="dX_dT"></a><span class="summary-name">dX_dT</span><br />
+      velocity [m/s]
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Phi"></a><span class="summary-name">Phi</span><br />
+      angle [rad]
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="dPhi_dT"></a><span class="summary-name">dPhi_dT</span><br />
+      angle velocity [rad/s]
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="a"></a><span class="summary-name">a</span><br />
+      acceleration [m/s&#178;]
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="l"></a><span class="summary-name">l</span><br />
+      length of pendulum [m]
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="m"></a><span class="summary-name">m</span><br />
+      mass of pendulum [kg]
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="M_P"></a><span class="summary-name">M_P</span><br />
+      friction of bearing of pendulum expressed as torque [kgm&#178;/s&#178;=Nm]
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="a_W"></a><span class="summary-name">a_W</span><br />
+      friction of car expressed as acceleration [m/s&#178;]
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="W"></a><span class="summary-name">W</span><br />
+      gain for incoming acceleration value
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Z"></a><span class="summary-name">Z</span><br />
+      disturbance
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Oct 27 21:04:21 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

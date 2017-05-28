@@ -1,0 +1,21 @@
+.gallery .image { float: left;
+                 margin: 0 5px 20px 0; }
+
+.gallery .image {
+ width: 240px;
+}
+.gallery .image .image2 {
+ text-align: center;
+}
+
+.gallery .image img {
+ border: 1px;
+}
+
+.gallery .image .caption { font-size: 80%;
+                  font-family: Verdana, Arial, sans-serif;
+                  text-align: center; }
+
+.date { font-size: 50%;
+                  font-family: Verdana, Arial, sans-serif;
+                  text-align: right; }

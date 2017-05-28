@@ -1,0 +1,56 @@
+FUNCTION_BLOCK Inverted_Pendulum
+
+    VAR_INPUT
+        Phi : REAL; (* description='angle',min=0,max=360,unit='degrees'*)
+        dPhi_dT : REAL; (* description='angle velocity',min=-600,max=600,unit='degrees per second'*)
+    END_VAR
+
+    VAR_OUTPUT
+        a : REAL; (* description='acceleration',min=-50,max=50,unit='meter per second^2' *)
+    END_VAR
+
+    FUZZIFY Phi
+        TERM eN :=  (-22.5,0) (0,1) (22.5,0);
+        TERM pk := (0,0) (22.5,1) (45,0);
+        TERM pm := (22.5,0) (45,1) (67.5,0);
+        TERM pg := (45,0) (67.5,1) (90,1) (180,0);
+        TERM nk := (-45,0) (-22.5,1) (0,0);
+        TERM nm := (-67.5,0) (-45,1) (-22.5,0);
+        TERM ng := (-180,0) (-90,1) (-67.5,1) (-45,0);
+    END_FUZZIFY
+
+    FUZZIFY dPhi_dT
+        TERM eN := (-11.25,0) (0,1) (11.25,0);
+        TERM pk := (0,0) (11.25,1) (22.5,0);
+        TERM pm := (11.25,0) (22.5,1) (33.75,0);
+        TERM pg := (22.5,0) (33.75,1) (45,1) (90,0);
+        TERM nk := (-22.5,0) (-11.25,1) (0,0);
+        TERM nm := (-33.75,0) (-22.5,1) (-11.25,0);
+        TERM ng := (-90,0) (-45,1) (-33.75,1) (-22.5,0);
+    END_FUZZIFY
+
+    DEFUZZIFY a
+        TERM eN := (-0.25,0) (0,1) (0.25,0);
+        TERM pk := (0,0) (0.25,1) (0.5,0);
+        TERM pm := (0.25,0) (0.5,1) (0.75,0);
+        TERM pg := (0.5,0) (0.75,1) (1,1) (2,0);
+        TERM nk := (-0.5,0) (-0.25,1) (0,0);
+        TERM nm := (-0.75,0) (-0.5,1) (-0.25,0);
+        TERM ng := (-2,0) (-1,1) (-0.75,1) (-0.5,0);
+        ACCU : MAX (* AlgebraicSum *);
+        METHOD : COG;
+        DEFAULT := 0;
+    END_DEFUZZIFY
+
+    RULEBLOCK Inverted_Pendulum
+        AND : MIN;
+        OR : MAX;
+        RULE 1 (* rule1 *):  IF Phi IS nk AND dPhi_dT IS eN THEN a IS pk;
+        RULE 2 (* rule 2 *): IF Phi IS pk THEN a IS nk;
+        RULE 3 (* rule 3 *): IF Phi IS nm THEN a IS pm;
+        RULE 4 (* rule 4 *): IF Phi IS pm THEN a IS nm;
+        RULE 5 (* rule 5 *): IF Phi IS ng THEN a IS pg;
+        RULE 6 (* rule 6 *): IF Phi IS pg THEN a IS ng;
+    END_RULEBLOCK
+
+END_FUNCTION_BLOCK
